@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <div id="app">
+        <h1>{{ message }} {{concat1}} {{concat2}}</h1>
+        <input type="text" v-model="message">
+        <input type="text" v-model="concat1">
+        <input type="text" v-model="concat2">
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                concat1:"test",
+                concat2:"test",
+                message:2
+            }
+        })
+    </script>
+</body>
+</html>

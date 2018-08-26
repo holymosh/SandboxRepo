@@ -2,22 +2,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="lessonstyle.css">
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <div id="app">
-        <h1>{{ message }}</h1>
-        <input type="text" v-model="message">
-        <input type="text" v-model="concat1">
-        <input type="text" v-model="concat2">
+        <ul>
+            <li v-for="bear in bears" :class="{'strike': true}">{{bear}}</li>
+        </ul>
     </div>
     <script>
-        new Vue({
+        var vueApp = new Vue({
             el:"#app",
             data:{
-                concat1:"test",
-                concat2:"test",
-                message:2
+                bears:['bear1','bear2','bear3','bear4']
             }
         })
     </script>
