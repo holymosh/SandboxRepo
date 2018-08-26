@@ -7,15 +7,17 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <div id="app">
+        <span></span>
         <ul>
-            <li v-for="bear in bears" :class="{'strike': true}">{{bear}}</li>
+            <li v-for="member in members" :class="{'strike': !member.isInLeague}">{{member.name}}</li>
         </ul>
     </div>
     <script>
         var vueApp = new Vue({
             el:"#app",
             data:{
-                bears:['bear1','bear2','bear3','bear4']
+                members:[{name:"4g1s",isInLeague:true},{name:"holymosh",isInLeague:true},
+                {name:"isus",isInLeague:true},{name:"zhambyl",isInLeague:false},]
             }
         })
     </script>
