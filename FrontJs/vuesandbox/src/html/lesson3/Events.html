@@ -5,7 +5,27 @@
     <title>Document</title>
 </head>
 <body>
+        <div id="app">
+                <input type="text" v-model="b" v-on:keyup.enter="onCLick" >
+                <input type="text" v-model="a" v-on:keyup.enter="onSecondEnter">
+            </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    
+    <script>
+        var vueApp = new Vue({
+            el:"#app",
+            data:{
+                b:'',
+                a:''
+            },
+            methods:{
+                onCLick:function() {    
+                    alert(this.b + this.a);
+                },
+                onSecondEnter:function(){
+                    alert(Number(this.b) + Number(this.a));
+                }
+            }
+        });
+    </script>
 </body>
 </html>

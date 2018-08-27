@@ -4,3 +4,7 @@
     align-items: center;
     height: 100vh;
 }
+input{
+    border-bottom: 20pc;
+    align-self: inherit
+}
