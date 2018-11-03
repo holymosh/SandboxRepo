@@ -6,20 +6,24 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <div id="app">
-        <h1>{{ message }} {{concat1}} {{concat2}}</h1>
+        <h1>{{ message }}</h1>
+        <h2>{{ mess2}}</h2>
+        <h3>{{ res }}</h3>
         <input type="text" v-model="message">
-        <input type="text" v-model="concat1">
-        <input type="text" v-model="concat2">
+        <input type="text" v-model="mess2">
+        <input type="text" v-model="res">
+        <button @click="res = message+ ' ' + mess2">join strings</button>
     </div>
     <script>
         new Vue({
             el:"#app",
             data:{
-                concat1:"test",
-                concat2:"test",
-                message:2
+                message:"test",
+                mess2:"mess2",
+                res: ""
             }
-        })
+        });
+
     </script>
 </body>
 </html>
