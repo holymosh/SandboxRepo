@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="guy in people | orderBy 'name'">{{guy.name }} {{guy.isMember ? "в лиге" : "не в лиге" }}</li>
+        </ul>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                people:[
+                    {name:"sovent",isMember:true},
+                    {name:"holymosh", isMember:false},
+                    {name:"zhambyl",isMember:false},
+                    {name:"sus", isMember:true},
+                    {name:"ded",isMember:true}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
