@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="app">
+        <span>{{count}} / 30</span>
+        <textarea v-model="text"></textarea>
+        <button v-if="count <= 30">отправить</button>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                text:'',
+            },
+            computed:{
+                count: function(){
+                    return this.text.length;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
