@@ -18,8 +18,14 @@ new Vue({
         },
     },
     methods:{
-        switchComponent: function(component){
+        _switchComponent: function (component) {
             this.currentComponent = component;
-        }
+        },
+        get switchComponent() {
+            return this._switchComponent;
+        },
+        set switchComponent(value) {
+            this._switchComponent = value;
+        },
     }
 })
