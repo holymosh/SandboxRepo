@@ -2,7 +2,11 @@
   <div id="app" >
     <aside>
     <span><router-link to="/">Главная</router-link></span>
-    <span><router-link to="/test">Go to test</router-link></span>
+    <span><router-link to="/test">Component</router-link></span>
+    <span><router-link to="/objects">Объекты</router-link></span>
+    <span><router-link to="/subjects">Субъекты</router-link></span>
+    <span><router-link to="/projects">Проекты</router-link></span>
+    <span><router-link to="/checkings">Проверки</router-link></span>
     </aside>
     <div>
         <router-view/>
