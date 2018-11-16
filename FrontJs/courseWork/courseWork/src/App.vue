@@ -1,5 +1,6 @@
 <template>
   <div id="app" >
+    <div class="sidebar clearfix">
     <aside>
     <span><router-link to="/">Главная</router-link></span>
     <span><router-link to="/test">Component</router-link></span>
@@ -8,6 +9,7 @@
     <span><router-link to="/projects">Проекты</router-link></span>
     <span><router-link to="/checkings">Проверки</router-link></span>
     </aside>
+    </div>
     <div>
         <router-view/>
     </div>
@@ -21,20 +23,14 @@ export default {
 </script>
 
 <style scoped>
-aside{
-  position: fixed;
-  width: 7.1rem;
-  height: calc(100% -  4.045rem);
-  transition: 0.3s cubic-bezier(0.6, 0, 0.4, 1);
-  transition-property: width, transform;
-  background-color: gainsboro;
-  touch-action: auto;
-  overflow: hidden !important;
+.sidebar{
+  float: left;
+  background: whitesmoke;
+}
+.clearfix{
+  overflow: hidden;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 span{
   display: block;
