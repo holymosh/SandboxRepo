@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import TestComponent from '@/components/TestComponent'
 import ObjectEe from '@/components/Object'
 import Subject from '@/components/Subject'
 import Checking from '@/components/Checking'
@@ -15,11 +14,6 @@ export default new Router({
       path: '/',
       name: 'HelloWorld',
       component: HelloWorld
-    },
-    {
-      path: '/test',
-      name: 'TestComponent',
-      component: TestComponent
     },
     {
       path: '/objects',

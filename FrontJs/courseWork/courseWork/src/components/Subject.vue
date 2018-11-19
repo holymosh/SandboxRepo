@@ -5,6 +5,5 @@
 </template>
 <style>
 #Subject{
-    text-align: center;
 }
 </style>

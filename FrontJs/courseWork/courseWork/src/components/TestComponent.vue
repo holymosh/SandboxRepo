@@ -16,7 +16,4 @@ export default {
 }
 </script>
 <style>
-#TestComponent{
-  text-align: center;
-}
 </style>

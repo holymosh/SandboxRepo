@@ -5,6 +5,5 @@
 </template>
 <style>
 #Project{
-    text-align: center;
 }
 </style>
