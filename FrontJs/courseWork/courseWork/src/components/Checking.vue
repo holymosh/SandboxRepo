@@ -1,12 +1,22 @@
 <template>
     <div id="Checking">
         <h1>Выездные проверки инвест проектов</h1>
+        <div class="grid">
         <v-data-table
     :headers="headers"
-    :items="desserts"
+    :items="elements"
     class="elevation-1"
   >
+  <template slot="items" slot-scope="props">
+      <td>{{ props.item.project }}</td>
+      <td class="text-xs-right">{{ props.item.project }}</td>
+      <td class="text-xs-right">{{ props.item.project }}</td>
+      <td class="text-xs-right">{{ props.item.project }}</td>
+      <td class="text-xs-right">{{ props.item.project }}</td>
+      <td class="text-xs-right">{{ props.item.project }}</td>
+    </template>
   </v-data-table>
+  </div>
     </div>
 </template>
 <script>
@@ -14,19 +24,15 @@ export default {
   data () {
     return {
       headers: [
-        {
-          text: 'Dessert (100g serving)',
-          align: 'left',
-          sortable: false,
-          value: 'name'
-        },
-        { text: 'Calories', value: 'calories' },
-        { text: 'Fat (g)', value: 'fat' },
-        { text: 'Carbs (g)', value: 'carbs' },
-        { text: 'Protein (g)', value: 'protein' },
-        { text: 'Iron (%)', value: 'iron' }
+        { text: 'Проект', value: 'project' },
+        { text: 'Объект', value: 'project' },
+        { text: 'Год начала', value: 'project' },
+        { text: 'Год окончания', value: 'project' },
+        { text: 'Тип', value: 'project' }
       ],
-      desserts: []
+      elements: [
+        {project: 'test'}
+      ]
     }
   }
 }
@@ -34,4 +40,6 @@ export default {
 <style>
 #Checking {
 }
+.grid{
+    margin: 0% auto}
 </style>
