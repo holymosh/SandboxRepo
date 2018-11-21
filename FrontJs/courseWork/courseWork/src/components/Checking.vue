@@ -1,7 +1,6 @@
 <template>
     <div id="Checking">
         <h1>Выездные проверки инвест проектов</h1>
-        <div class="grid">
         <v-data-table
     :headers="headers"
     :items="elements"
@@ -13,11 +12,9 @@
       <td class="text-xs-right">{{ props.item.project }}</td>
       <td class="text-xs-right">{{ props.item.project }}</td>
       <td class="text-xs-right">{{ props.item.project }}</td>
-      <td class="text-xs-right">{{ props.item.project }}</td>
     </template>
   </v-data-table>
   </div>
-    </div>
 </template>
 <script>
 export default {
@@ -41,5 +38,6 @@ export default {
 #Checking {
 }
 .grid{
-    margin: 0% auto}
+    margin: 0% auto
+    }
 </style>

@@ -1,14 +1,19 @@
 <template>
   <div id="app" >
-    <div class="sidebar clearfix">
-    <span><router-link to="/">Главная</router-link></span>
-    <span><router-link to="/objects">Объекты</router-link></span>
-    <span><router-link to="/subjects">Субъекты</router-link></span>
-    <span><router-link to="/projects">Проекты</router-link></span>
-    <span><router-link to="/checkings">Проверки</router-link></span>
+    <div class="menu">
+    <v-toolbar dark dense>
+      <v-toolbar-side-icon to="/">
+      </v-toolbar-side-icon>
+      <v-toolbar-items>
+        <v-btn flat to="/objects">Объекты</v-btn>
+        <v-btn flat to="/subjects">Субъекты</v-btn>
+        <v-btn flat to="/projects">Проекты</v-btn>
+        <v-btn flat to="/checkings">Проверки</v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
     </div>
-    <div>
-        <router-view/>
+    <div class="view">
+    <router-view/>
     </div>
   </div>
 </template>
@@ -20,26 +25,19 @@ export default {
 </script>
 
 <style scoped>
-.sidebar{
-  float: left;
-  background: whitesmoke;
-  margin-top: 5% ;
-  margin-right: 25%;
-}
-.container{
-  margin: 0 auto;
-}
-
 #app {
 }
-span{
-  display: block;
-  margin-left: 10% ;
-  margin-top: 3%;
+.menu{
+  margin-bottom:1rem
 }
-a:visited { text-decoration: none; color: black;}
-a:focus { text-decoration: none; color: rgb(85, 121, 156); }
-a:hover, a:active { text-decoration: none; color:black }
-a:link{text-decoration: none;}
-a:active{text-decoration: none;}
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+a:link {
+  text-decoration: none;
+}
+.view{
+  padding:0 2%;
+}
 </style>

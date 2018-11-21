@@ -1,7 +1,13 @@
 <template>
   <div class="hello" id="HelloWorld">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h1>Курсовая работа</h1>
+    <h2>Меню:</h2>
+    <ul>
+      <li>Объекты - объекты электроэнергетики</li>
+      <li>Субъекты - субъекты электроэнергетики </li>
+      <li>Проекты - инвестиционные проекты, которые относятся к объектам</li>
+      <li>Провеки - выездные проверки инвестиционных проектов </li>
+    </ul>
   </div>
 </template>
 
@@ -20,10 +26,15 @@ export default {
 <style scoped>
 #HelloWorld{
 }
-h1, h2 {
-  font-weight: normal;
+h1{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
-a {
-  color: #42b983;
+h2{
+  padding-bottom: 5px;
+  padding-left: 1%;
+}
+li{
+  font-size: 12pt
 }
 </style>
