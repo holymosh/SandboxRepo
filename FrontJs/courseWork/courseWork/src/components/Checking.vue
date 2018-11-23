@@ -8,10 +8,10 @@
   >
   <template slot="items" slot-scope="props">
       <td>{{ props.item.project }}</td>
-      <td class="text-xs-right">{{ props.item.project }}</td>
-      <td class="text-xs-right">{{ props.item.project }}</td>
-      <td class="text-xs-right">{{ props.item.project }}</td>
-      <td class="text-xs-right">{{ props.item.project }}</td>
+      <td>{{ props.item.project }}</td>
+      <td>{{ props.item.project }}</td>
+      <td>{{ props.item.project }}</td>
+      <td>{{ props.item.project }}</td>
     </template>
   </v-data-table>
   </div>
