@@ -5,6 +5,7 @@ import ObjectEe from '@/components/Object'
 import Subject from '@/components/Subject'
 import Checking from '@/components/Checking'
 import InvestProject from '@/components/InvestProject'
+import Holding from '@/components/Holding'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/projects',
       name: 'InvestProject',
       component: InvestProject
+    },
+    {
+      path: '/holdings',
+      name: 'Holding',
+      component: Holding
     }
   ]
 })

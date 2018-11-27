@@ -1,8 +1,7 @@
 <template>
-    <div id="Subject">
-        <h1>Субъекты электроэнергетики</h1>
+    <div id="Holding">
+        <h1>Холдинги</h1>
         <v-toolbar flat color="white">
-            <v-toolbar-title>subj crud</v-toolbar-title>
             <v-divider
         class="mx-2"
         inset
@@ -26,25 +25,7 @@
                               <v-text-field v-model="editedItem.name" label="Наименование"></v-text-field>
                           </v-flex>
                           <v-flex xs12 sm6 md4>
-                              <v-text-field v-model="editedItem.okved" label="ОКВЕД"></v-text-field>
-                          </v-flex>
-                          <v-flex xs12 sm6 md4>
-                              <v-text-field v-model="editedItem.inn" label="ИНН"></v-text-field>
-                          </v-flex>
-                          <v-flex xs12 sm6 md4>
-                              <v-text-field v-model="editedItem.address" label="Адрес"></v-text-field>
-                          </v-flex>
-                          <v-flex xs12 sm6 md4>
-                              <v-text-field v-model="editedItem.postAddress" label="Почтовый адрес"></v-text-field>
-                          </v-flex>
-                          <v-flex xs12 sm6 md4>
-                              <v-text-field v-model="editedItem.kpp" label="КПП"></v-text-field>
-                          </v-flex>
-                          <v-flex xs12 sm6 md4>
-                              <v-text-field v-model="editedItem.holding" label="Холдинг"></v-text-field>
-                          </v-flex>
-                          <v-flex xs12 sm6 md4>
-                              <v-text-field v-model="editedItem.email" label="E-mail"></v-text-field>
+                              <v-text-field v-model="editedItem.parent" label="Родительский холдинг"></v-text-field>
                           </v-flex>
                       </v-layout>
                   </v-container>
@@ -62,13 +43,7 @@
             <template slot="items" slot-scope="props">
                 <td>{{props.item.id}}</td>
                 <td>{{props.item.name}}</td>
-                <td>{{props.item.okved}}</td>
-                <td>{{props.item.inn}}</td>
-                <td>{{props.item.address}}</td>
-                <td>{{props.item.postAddress}}</td>
-                <td>{{props.item.kpp}}</td>
-                <td>{{props.item.holding}}</td>
-                <td>{{props.item.email}}</td>
+                <td>{{props.item.parent}}</td>
                 <td class="justify-center layout px-0">
                     <v-icon small class="mr-2" @click="editItem(props.item)">edit</v-icon>
                     <v-icon small class="mr-2" @click="deleteItem(props.item)">delete</v-icon>
@@ -96,37 +71,19 @@ export default {
     headers: [
       {text: 'Id', value: 'id'},
       {text: 'Наименование', value: 'name'},
-      {text: 'Оквед', value: 'okved'},
-      {text: 'ИНН', value: 'inn'},
-      {text: 'Адрес', value: 'address'},
-      {text: 'Почтовый адрес', value: 'postAddress'},
-      {text: 'КПП', value: 'kpp'},
-      {text: 'Холдинг', value: 'holding'},
-      {text: 'E-mail', value: 'email'}
+      {text: 'Родительский холдинг', value: 'parent'}
     ],
-    subjects: [],
+    objects: [],
     editedIndex: -1,
     editedItem: {
       id: 0,
       name: '',
-      okved: '',
-      inn: '',
-      address: '',
-      postAddress: '',
-      kpp: '',
-      holding: '',
-      email: ''
+      parent: ''
     },
     defaultItem: {
       id: 0,
       name: '',
-      okved: '',
-      inn: '',
-      address: '',
-      postAddress: '',
-      kpp: '',
-      holding: '',
-      email: ''
+      parent: ''
     }
   }),
 
@@ -147,11 +104,13 @@ export default {
   methods: {
     initialize () {
       this.subjects = [
-        {id: 1, name: 'Субъект1', okved: 'окв', inn: '213211', address: 'ул. КАСА д 1 кожевника', postAddress: 'Такой же', kpp: 'кпп', holding: 'АО Кожевники', email: 'kozhevnik_misos@misos.ru'},
-        {id: 2, name: 'Субъект2', okved: 'окв', inn: '213212', address: 'ул. КАСА д 2 кожевника', postAddress: 'Такой же', kpp: 'кпп', holding: 'АО Кожевники', email: 'kozhevnik_misos@misos.ru'},
-        {id: 3, name: 'Субъект3', okved: 'окв', inn: '213213', address: 'ул. КАСА д 3кожевника', postAddress: 'Такой же', kpp: 'кпп', holding: 'АО Кожевники', email: 'kozhevnik_misos@misos.ru'},
-        {id: 4, name: 'Субъект4', okved: 'окв', inn: '213215', address: 'ул. КАСА д 4кожевника', postAddress: 'Такой же', kpp: 'кпп', holding: 'АО Кожевники', email: 'kozhevnik_misos@misos.ru'}
-
+        {id: 1, name: 'Электроэнергетика РФ', parent: ''},
+        {id: 2, name: 'АО Бийскэнерго', parent: 'Электроэнергетика РФ'},
+        {id: 3, name: 'БЭСК', parent: 'Электроэнергетика РФ'},
+        {id: 4, name: 'БЭС', parent: 'Электроэнергетика РФ'},
+        {id: 5, name: 'АО Волга', parent: 'Электроэнергетика РФ'},
+        {id: 6, name: 'Гор электросеть', parent: 'Электроэнергетика РФ'},
+        {id: 7, name: 'Евросиб энерго', parent: 'Электроэнергетика РФ'}
       ]
     },
     editItem (item) {
